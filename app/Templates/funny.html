@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1 style="color: #0077be; text-align: center;">From Us</h1>
+    <p style="text-align: center;">A little something from those who love you</p>
+
+    <!-- Decorative Image (moving across the screen) -->
+    <img src="{{ url_for('static', filename='images/STK-20240908-WA0005.webp') }}" alt="Decorative Image" class="moving-image">
+
+    <!-- Card Container -->
+    <div class="card-container" style="position: relative; width: 70%; margin: 60px auto; display: flex; flex-direction: column; gap: 20px;">
+        <!-- Card for Sister-in-law -->
+        <div class="card" style="background-color: #1f1f1f; color: #e0e0e0; padding: 20px; border-radius: 10px; width: 100%; display: flex; flex-direction: column; justify-content: space-between;">
+            <div style="font-weight: bold; color: #00bcd4; margin-bottom: 10px;">From Liza (Sharkbait, hoo ha ha!)</div>
+            <p style="flex-grow: 1;">My love, baie geluk met jou verjaarsdag! Jy is een amazing man en ek is so trots op wie jy is en alles wat jy vir ons doen. Dankie dat jy altyd God eerste sit en doen wat hy van jou verwag. Jy is een amazing mens en ek hoop die Here spaar jou nog baie lank vir my. Mag ons nog oud word en dink aan die Ou Dae.❤️</p>
+        </div>
+
+        <!-- Card for Theunus -->
+        <div class="card" style="background-color: #1f1f1f; color: #e0e0e0; padding: 20px; border-radius: 10px; width: 100%; display: flex; flex-direction: column; justify-content: space-between;">
+            <div style="font-weight: bold; color: #00bcd4; margin-bottom: 10px;">From Theunus (Lost Diver)</div>
+            <p style="flex-grow: 1;">Happy Birthday to an Amazing Brother!👌🏼
+
+                Today, we celebrate not just the day you were born, but the incredible person you've become. Your strength, kindness, and unwavering support mean the world to us. May this year bring you all the joy you deserve, filled with laughter, love, and unforgettable moments. Cheers to many more adventures together—you're not just my brother, but also my lifelong friend. Here’s to another year of making cherished memories!
+                
+                Enjoy your special day to the fullest!</p>
+        </div>
+        <!-- Add more cards as needed -->
+    </div>
+
+    <style>
+        .moving-image {
+            position: absolute; /* Position the image absolutely */
+            width: 100px; /* Width for better visibility */
+            height: auto; /* Maintain aspect ratio */
+            z-index: 10; /* Bring the image in front of other content */
+            animation: moveAcross 12s linear infinite; /* Slower continuous movement */
+            top: 20px; /* Position the image at the top left */
+            left: -100px; /* Start off-screen to the left */
+        }
+
+        @keyframes moveAcross {
+            0% {
+                transform: translateX(0); /* Start at the initial position */
+            }
+            100% {
+                transform: translateX(calc(100vw + 100px)); /* Move across to the right, off-screen */
+            }
+        }
+    </style>
+{% endblock %}

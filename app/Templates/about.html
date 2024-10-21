@@ -1,0 +1,179 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1 style="color: #0077be; text-align: center;">About Our Amazing Accountant</h1> <!-- Ocean Blue heading -->
+
+<div class="card-container" style="position: relative; width: 80%; margin: 0 auto;">
+    <div class="surfer-emoji">🏄‍♂️</div> <!-- Surfer emoji -->
+
+    <div class="card mb-4 about-card" style="background-color: #1f1f1f; color: #e0e0e0; position: relative; overflow: hidden; padding: 20px;">
+        <div class="card-body">
+            <p style="line-height: 1.8; margin-bottom: 15px; color: #00bcd4;">Introducing our extraordinary accountant, known for transforming the perception of the accounting profession. Often regarded as the accountant extraordinaire, he brings a unique flair to financial management. With a knack for turning complex tax deductions into engaging narratives, he could easily script an action-packed movie titled <em style="color: #ffd700;">“The Return of the Deductions!”</em></p>
+            
+            <p style="line-height: 1.8; margin-bottom: 15px; color: #00bcd4;">Beyond the world of spreadsheets and financial reports, he immerses himself in his true passion: scuba diving. Imagine a financial wizard navigating the depths of the ocean, adeptly balancing a ledger while swimming among vibrant marine life. It's said that fish are exceptional listeners, but he might just be sharing the latest tax regulations with them!</p>
+        </div>
+    </div>
+
+    <div class="card mb-4 content-card" style="background-color: #1f1f1f; color: #e0e0e0; position: relative; overflow: hidden; padding: 20px;">
+        <div class="card-body">
+            <h2 style="color: #0077be;">Accounting Superpowers:</h2>
+            <ul>
+                <li style="line-height: 1.8; color: #00bcd4;">🔍 <strong>Meticulous Eye for Detail:</strong> Renowned for his ability to spot discrepancies from a distance, his attention to detail is nothing short of a superpower!</li>
+                <li style="line-height: 1.8; color: #ffd700;">📊 <strong>Spreadsheet Whisperer:</strong> His spreadsheets are so impeccably organized that even Marie Kondo would take note.</li>
+                <li style="line-height: 1.8; color: #0077be;">😄 <strong>Client Satisfaction Ninja:</strong> Like a financial therapist, he ensures clients depart with a smile and a solid financial plan.</li>
+            </ul>
+
+            <h2 style="color: #00bcd4;">Diving into Adventures:</h2>
+            <p style="line-height: 1.8; margin-bottom: 15px; color: #ffd700;">As an extroverted scuba diving enthusiast, he explores the ocean not only for marine life but also to uncover hidden treasures. Rumor has it that he once attempted to teach a dolphin the intricacies of tax preparation. The dolphin, however, is still eagerly awaiting its W-2!</p>
+
+            <h2 style="color: #0077be;">The Know-It-All:</h2>
+            <p style="line-height: 1.8; margin-bottom: 15px; color: #00bcd4;">His encyclopedic knowledge is legendary. If trivia were an Olympic sport, he would undoubtedly be its Michael Phelps! Whether it's the capital of Bhutan or the weight of a blue whale, he has the answers—complete with detailed breakdowns of any applicable tax incentives.</p>
+
+            <h2 style="color: #ffd700;">Gallery of Greatness:</h2>
+            <div class="row" style="display: flex; flex-wrap: wrap; justify-content: space-between;">
+                <div class="col-md-4" style="flex: 1;">
+                    <img src="{{ url_for('static', filename='images/IMG-20241021-WA0011.jpg') }}" alt="Image 1" class="gallery-image" onclick="openModal(this)">
+                </div>
+                <div class="col-md-4" style="flex: 1;">
+                    <img src="{{ url_for('static', filename='images/IMG-20241021-WA0019 16.15.07.jpg') }}" alt="Image 2" class="gallery-image" onclick="openModal(this)">
+                </div>
+                <div class="col-md-4" style="flex: 1;">
+                    <img src="{{ url_for('static', filename='images/IMG-20241021-WA0010.jpg') }}" alt="Accountant Celebration" class="gallery-image" onclick="openModal(this)">
+                </div>
+                <div class="col-md-4" style="flex: 1;">
+                    <img src="{{ url_for('static', filename='images/IMG-20241021-WA0015.jpg') }}" alt="Image 4" class="gallery-image" onclick="openModal(this)"> <!-- New Image 4 -->
+                </div>
+                <div class="col-md-4" style="flex: 1;">
+                    <img src="{{ url_for('static', filename='images/IMG-20241021-WA0021 (1).jpg') }}" alt="Image 5" class="gallery-image" onclick="openModal(this)"> <!-- New Image 5 -->
+                </div>
+            </div>
+
+            <p style="line-height: 1.8; color: #00bcd4;">In conclusion, here’s to an accountant who makes numbers enjoyable, a scuba diver who explores both the ocean's depths and the intricacies of financial spreadsheets, and a trivia aficionado who seems to know it all—except perhaps how to remember to turn off the lights when he leaves a room! Happy birthday to an exceptional individual whose day should be filled with joy, adventure, and, of course, an abundance of cake!</p>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for displaying the expanded image -->
+<div id="myModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="img01">
+    <div id="caption"></div>
+</div>
+
+<style>
+    .surfer-emoji {
+        position: absolute;
+        bottom: -40px; /* Start just outside the bottom */
+        left: -40px; /* Start just outside the left edge */
+        font-size: 40px; /* Size of the surfer emoji */
+        animation: surf-around 25s linear infinite; /* Slower animation */
+    }
+
+    @keyframes surf-around {
+        0% {
+            left: -40px;
+            bottom: -40px; /* Start at bottom left */
+        }
+        25% {
+            left: -40px;
+            bottom: 100%; /* Move up the left side */
+        }
+        50% {
+            left: 100%;
+            bottom: 100%; /* Move across the top */
+        }
+        75% {
+            left: 100%;
+            bottom: -40px; /* Move down the right side */
+        }
+        100% {
+            left: -40px;
+            bottom: -40px; /* Return to bottom left */
+        }
+    }
+
+    .card-container {
+        position: relative;
+        margin-bottom: 50px; /* Add space below the card for the surfer emoji */
+    }
+
+    .gallery-image {
+        width: 220px; /* Slightly increased width for bigger images */
+        height: auto; /* Maintain aspect ratio */
+        border-radius: 10px;
+        margin: 2px; /* Reduced margin for closer spacing */
+        cursor: pointer; /* Change cursor to pointer when hovering over images */
+    }
+
+    /* Styles for modal */
+    .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1000; /* Higher z-index to stay on top of the header */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+    }
+
+    .modal-content {
+        margin: auto;
+        display: block;
+        width: 80%; /* Could be more or less, depending on screen size */
+        max-width: 700px; /* Optional max-width */
+    }
+
+    #caption {
+        margin: auto;
+        display: block;
+        text-align: center;
+        color: #ccc;
+        padding: 10px 0;
+        height: 150px;
+    }
+
+    .close {
+        position: absolute;
+        top: 15px;
+        right: 35px;
+        color: #fff;
+        font-size: 40px;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+    }
+</style>
+
+<script>
+    // Open the modal
+    function openModal(img) {
+        const modal = document.getElementById("myModal");
+        const modalImg = document.getElementById("img01");
+        const captionText = document.getElementById("caption");
+        modal.style.display = "block";
+        modalImg.src = img.src; // Set the source of the modal image
+        captionText.innerHTML = img.alt; // Set the caption
+
+        // Hide the header when modal is open
+        const header = document.querySelector("header");
+        header.style.display = "none";
+    }
+
+    // Close the modal
+    function closeModal() {
+        const modal = document.getElementById("myModal");
+        modal.style.display = "none";
+
+        // Show the header again when the modal is closed
+        const header = document.querySelector("header");
+        header.style.display = "block";
+    }
+</script>
+{% endblock %}
