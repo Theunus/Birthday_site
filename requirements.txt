@@ -12,6 +12,7 @@ Flask-Mail==0.9.1
 Flask-Migrate==4.0.5
 Flask-SQLAlchemy==3.1.1
 Flask-WTF==1.2.1
+Frozen-Flask @ git+https://github.com/Frozen-Flask/Frozen-Flask.git@8df36d7e2476db826490dd494721e3eafb2b91d7
 greenlet==3.0.1
 gunicorn==21.2.0
 itsdangerous==2.1.2
